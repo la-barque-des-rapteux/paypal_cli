@@ -1,0 +1,13 @@
+Unité d'intervalle : Vous entrez "MONTH" car le paiement doit se répéter chaque mois.
+Nombre d'intervalles : Vous entrez 1 si le paiement se fait tous les mois. Si c'était tous les 3 mois, vous entreriez 3.
+cycle : voir create_plan_cycle
+Les frais d'installation : (champ setup_fee) dans un plan de facturation PayPal sont des frais uniques facturés au moment où le client s'inscrit au plan. Cela peut être utilisé pour couvrir des coûts initiaux, comme :
+Code de la monnaie : EUR
+Le seuil d'échec de paiement : est un paramètre qui indique le nombre maximum de tentatives de paiement échouées avant que le plan d'abonnement soit automatiquement suspendu par PayPal.
+Fonctionnement :
+    Si un paiement pour un cycle d'abonnement échoue (par exemple, en raison d'une carte expirée ou de fonds insuffisants), PayPal réessaie automatiquement après un certain délai.
+    Ce paramètre détermine combien de tentatives échouées consécutives sont autorisées avant que le plan d'abonnement soit suspendu.
+Exemple :
+    Seuil = 3 (valeur courante par défaut) :
+        PayPal essaiera jusqu'à 3 fois de débiter le client pour un cycle de facturation donné.
+        Si les 3 tentatives échouent, le plan sera suspendu et nécessitera une intervention manuelle pour être réactivé.

@@ -1,0 +1,3 @@
+cd manage_paypal_plan
+source venv/bin/activate
+python main.py

@@ -1,0 +1,82 @@
+Si vous souhaitez créer un plan sans période d'essai avec une tarification spécifique en fonction du nombre de produits, voici comment vous pouvez répondre au programme lorsqu'il vous pose des questions pour les cycles de facturation (`billing_cycles`) :
+
+### Plan attendu :
+- **Sans période d'essai**.
+- **10 € par mois** pour 1 produit.
+- **7 € par mois** pour 2 produits.
+- **4 € par mois** pour 3 produits ou plus.
+
+Vous devez configurer des cycles de facturation en fonction de ces tarifs et les saisir séquentiellement comme suit :
+
+---
+
+### Réponses au programme pour les cycles de facturation
+
+1. **Cycle 1** :
+   - **Unité d'intervalle** : `MONTH` (vous facturez tous les mois).
+   - **Nombre d'intervalles** : `1`.
+   - **Type de durée (`tenure_type`)** : `REGULAR`.
+   - **Séquence** : `1`.
+   - **Nombre total de cycles (`total_cycles`)** : `0` (signifie qu'il est récurrent indéfiniment).
+   - **Prix fixe** : `10`.
+   - **Code de la monnaie** : `EUR`.
+
+2. **Cycle 2** :
+   - **Unité d'intervalle** : `MONTH`.
+   - **Nombre d'intervalles** : `1`.
+   - **Type de durée** : `REGULAR`.
+   - **Séquence** : `2`.
+   - **Nombre total de cycles** : `0`.
+   - **Prix fixe** : `7`.
+   - **Code de la monnaie** : `EUR`.
+
+3. **Cycle 3** :
+   - **Unité d'intervalle** : `MONTH`.
+   - **Nombre d'intervalles** : `1`.
+   - **Type de durée** : `REGULAR`.
+   - **Séquence** : `3`.
+   - **Nombre total de cycles** : `0`.
+   - **Prix fixe** : `4`.
+   - **Code de la monnaie** : `EUR`.
+
+---
+
+### Exemple complet de réponses
+Quand le programme demande des cycles de facturation, voici un exemple de ce que vous entrez :
+
+1. **Cycle 1 (1 produit)** :
+   - Unité d'intervalle : `MONTH`
+   - Nombre d'intervalles : `1`
+   - Type de durée : `REGULAR`
+   - Séquence : `1`
+   - Nombre total de cycles : `0`
+   - Prix fixe : `10`
+   - Code de la monnaie : `EUR`
+
+2. **Cycle 2 (2 produits)** :
+   - Unité d'intervalle : `MONTH`
+   - Nombre d'intervalles : `1`
+   - Type de durée : `REGULAR`
+   - Séquence : `2`
+   - Nombre total de cycles : `0`
+   - Prix fixe : `7`
+   - Code de la monnaie : `EUR`
+
+3. **Cycle 3 (3 produits ou plus)** :
+   - Unité d'intervalle : `MONTH`
+   - Nombre d'intervalles : `1`
+   - Type de durée : `REGULAR`
+   - Séquence : `3`
+   - Nombre total de cycles : `0`
+   - Prix fixe : `4`
+   - Code de la monnaie : `EUR`
+
+---
+
+### Notes importantes :
+- **Pas de période d'essai** : Vous ne configurez pas de cycle `TRIAL`. Commencez directement avec un cycle `REGULAR`.
+- **Prix fixe par produit** : Chaque cycle de facturation correspond à une tarification spécifique pour le nombre de produits.
+- **Séquence unique** : Chaque cycle doit avoir un numéro de séquence unique (`1`, `2`, `3`).
+- **Récurrence illimitée** : Le nombre total de cycles est `0`, ce qui signifie que la facturation continue indéfiniment.
+
+En suivant ces étapes, le programme créera un plan qui correspond à vos besoins.
